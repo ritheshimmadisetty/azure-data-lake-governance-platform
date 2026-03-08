@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: sales
+    database: DE_PROJECT
+    schema: SALES
+    tables:
+      - name: RAW_CUSTOMERS
+      - name: RAW_PRODUCTS
+      - name: RAW_ORDERS
+  

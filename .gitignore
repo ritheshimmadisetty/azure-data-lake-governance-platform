@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# dbt
+sales_dw/target/
+sales_dw/dbt_packages/
+sales_dw/logs/
+
+# Airflow
+airflow-docker/logs/
+*.db
+
+# Sensitive
+*.key
+profiles.yml
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,33 @@
+[0m10:32:30.482759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E68F9BF770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E68F9BF650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E68F9BF710>]}
+
+
+============================== 10:32:30.497004 | bd2baea3-02e1-4f93-98ba-6a86f9cf2205 ==============================
+[0m10:32:30.497004 [info ] [MainThread]: Running with dbt=1.11.7
+[0m10:32:30.501063 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Rithesh\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init sales_dw', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m10:32:30.579177 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Rithesh\.dbt
+[0m10:32:30.587911 [debug] [MainThread]: Starter project path: C:\Users\Rithesh\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\include\starter_project
+[0m10:32:30.640273 [info ] [MainThread]: 
+Your new dbt project "sales_dw" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:32:30.642293 [info ] [MainThread]: Setting up your profile.
+[0m10:33:18.557924 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:33:18.567460 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:33:18.568744 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:35:56.269683 [info ] [MainThread]: Profile sales_dw written to C:\Users\Rithesh\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m10:35:56.271930 [debug] [MainThread]: Command `dbt init` succeeded at 10:35:56.271930 after 206.33 seconds
+[0m10:35:56.273049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E68D31CD70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6A1927140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002E6A28F8EC0>]}
+[0m10:35:56.274167 [debug] [MainThread]: Flushing usage events
+[0m10:35:58.532749 [debug] [MainThread]: An error was encountered while trying to flush usage events
