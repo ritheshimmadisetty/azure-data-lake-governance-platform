@@ -2,8 +2,6 @@
 
 A data engineering project I built to practice working with the modern data stack end to end — from raw files landing in a data lake all the way to a queryable Snowflake warehouse, orchestrated automatically with Airflow.
 
-![Architecture](architecture.svg)
-
 ---
 
 ## What this project does
