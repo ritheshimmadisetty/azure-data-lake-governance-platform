@@ -25,9 +25,9 @@ dag = DAG(
 DATA_PATH    = '/opt/airflow/data'
 DBT_PATH     = '/opt/airflow/sales_dw'
 SNOWFLAKE_CONFIG = {
-    'user'     : 'RITHESH162',
-    'password' : 'Ritheshsnowflake6989',
-    'account'  : 'MXNVDOB-RI70382',
+    'user'     : os.environ.get('SNOWFLAKE_USER'),
+    'password' : os.environ.get('SNOWFLAKE_PASSWORD'),
+    'account'  : os.environ.get('SNOWFLAKE_ACCOUNT'),
     'warehouse': 'DE_WH',
     'database' : 'DE_PROJECT',
     'schema'   : 'SALES'
