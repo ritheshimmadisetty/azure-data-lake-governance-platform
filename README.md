@@ -2,8 +2,6 @@
 
 A data engineering project I built to practice working with the modern data stack end to end — from raw files landing in a data lake all the way to a queryable Snowflake warehouse, orchestrated automatically with Airflow.
 
-![Architecture](architecture.svg)
-
 ---
 
 ## What this project does
@@ -160,20 +158,6 @@ WHERE f.status = 'Completed'
 GROUP BY c.city, p.category
 ORDER BY total_revenue DESC;
 ```
-
----
-
-## A few decisions worth explaining
-
-**Delta Lake over plain Parquet** — Delta gives ACID transactions. If a Spark job crashes halfway through writing, you don't end up with a half-written table. Plain Parquet doesn't have that guarantee.
-
-**dbt for SQL transformations** — It's just SQL but with testing, version control, and lineage built in. Every model is documented and every column can be tested for nulls, uniqueness, or custom rules. Running `dbt test` before any downstream process catches data issues early.
-
-**Docker for Airflow** — Avoids the classic "works on my machine" problem. The whole Airflow stack (webserver, scheduler, postgres) comes up with one command and behaves the same everywhere.
-
-**Credentials in .env, never in code** — Learned this the hard way. All secrets go in `.env` which is gitignored. The code only reads `os.environ.get('SNOWFLAKE_PASSWORD')`.
-
----
 
 ## Author
 
