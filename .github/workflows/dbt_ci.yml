@@ -1,0 +1,63 @@
+name: dbt CI Pipeline
+
+# Trigger this workflow on every push to main branch
+# and on every pull request targeting main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  dbt-test:
+    name: Run dbt Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1 - Check out your code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2 - Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Step 3 - Install dbt
+      - name: Install dbt
+        run: pip install dbt-snowflake
+
+      # Step 4 - Create profiles.yml from secrets
+      # This is the secure way - credentials come from GitHub Secrets
+      # never from the code itself
+      - name: Create dbt profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml << EOF
+          sales_dw:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: DE_PROJECT
+                warehouse: DE_WH
+                schema: SALES
+                threads: 4
+          EOF
+
+      # Step 5 - Run dbt models
+      - name: Run dbt models
+        working-directory: sales_dw
+        run: dbt run
+
+      # Step 6 - Run dbt tests
+      - name: Run dbt tests
+        working-directory: sales_dw
+        run: dbt test
