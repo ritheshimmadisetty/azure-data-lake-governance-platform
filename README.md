@@ -2,6 +2,8 @@
 
 A data engineering project I built to practice working with the modern data stack end to end — from raw files landing in a data lake all the way to a queryable Snowflake warehouse, orchestrated automatically with Airflow.
 
+![dbt CI](https://github.com/ritheshimmadisetty/azure-data-lake-governance-platform/actions/workflows/dbt_ci.yml/badge.svg)
+
 ---
 
 ## What this project does
