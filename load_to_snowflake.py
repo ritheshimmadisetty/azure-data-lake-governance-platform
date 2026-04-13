@@ -5,7 +5,7 @@ from snowflake.connector.pandas_tools import write_pandas
 # Connect to Snowflake
 conn = snowflake.connector.connect(
     user="RITHESH162",
-    password="Ritheshsnowflake6989",
+    password="R@datadream6989",
     account="MXNVDOB-RI70382",  # e.g. abc12345.central-india.azure
     warehouse="DE_WH",
     database="DE_PROJECT",
